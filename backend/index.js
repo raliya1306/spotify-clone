@@ -4,6 +4,7 @@ import connectToMongoDb from './utils/db.js'
 import { clerkMiddleware } from '@clerk/express'
 import fileUpload from 'express-fileupload'
 import path from 'path'
+import cors from 'cors'
 
 import authRouter from './routes/auth.route.js'
 import adminRouter from './routes/admin.route.js'
@@ -14,6 +15,14 @@ import errorHandler from './middleware/errorHandler.middleware.js'
 
 const __dirname = path.resolve()
 const app = express()
+
+app.use(cors(
+	{
+		origin: 'http://127.0.0.1:5173',
+		credentials: true
+	}
+))
+
 app.use(express.json())
 app.use(clerkMiddleware())
 app.use(fileUpload({
