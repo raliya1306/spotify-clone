@@ -4,9 +4,9 @@ import { protectRoute, verifyAdmin } from '../middleware/auth.middleware.js'
 
 const songRouter = Router()
 
-songRouter.use(protectRoute)
+// songRouter.use(protectRoute)
 
-songRouter.get('/', protectRoute, verifyAdmin, getAllSongs)
+songRouter.get('/', verifyAdmin, getAllSongs)
 songRouter.get('/made-for-you', getMadeForYou)
 songRouter.get('/today-in-music', getTodayInMusic)
 songRouter.get('/recommended', getRecommended)

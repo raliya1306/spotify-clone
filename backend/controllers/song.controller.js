@@ -36,7 +36,7 @@ export const getTodayInMusic = async (req, res, next) => {
   try {
     const songs = await Song.aggregate([
       {
-        $sample: { size: 4 }
+        $sample: { size: 6 }
       },
       {
         $project: {
@@ -59,7 +59,7 @@ export const getRecommended = async (req, res, next) => {
   try {
     const songs = await Song.aggregate([
       {
-        $sample: { size: 4 }
+        $sample: { size: 8 }
       },
       {
         $project: {

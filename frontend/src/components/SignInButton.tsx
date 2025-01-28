@@ -17,7 +17,7 @@ const SignInAuthButtons = () => {
   }
 
   return (
-    <Button onClick={signInWithGoogle} className='w-full h-11 rounded-full px-6 font-bold'>
+    <Button onClick={signInWithGoogle} className='w-24 h-11 rounded-full px-6 font-bold bg-white hover:bg-gray-200'>
       Log in
     </Button>
   )

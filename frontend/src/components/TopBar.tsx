@@ -10,9 +10,9 @@ const TopBar = () => {
 
   return (
     <div className='flex items-center justify-between py-2 px-4 sticky top-0 bg-black z-20 h-16'>
-      <div className=''>
-        Spotify
-      </div>
+      <Link to={'/'}>
+        <img src='spotify-white.jpg' className='ml-2 w-[30px] h-[30px] flex-shrink-0' alt='spotify logo' />
+      </Link>
       <div className='flex items-center gap-2'>
         <Link to={'/'}>
           <div className='bg-zinc-400/30 rounded-full hover:bg-zinc-400/40 p-3'>
@@ -25,8 +25,8 @@ const TopBar = () => {
         </div>
       </div>
       <div className='flex gap-1 items-center'>
-        <Button className='rounded-full font-bold hover:scale-105'>Explore Premium</Button>
-        <Button variant={'ghost'} className='rounded-full font-bold hover:bg-transparent hover:scale-105'>
+        <Button className='bg-white hover:bg-gray-200 rounded-full font-bold hover:scale-105'>Explore Premium</Button>
+        <Button variant='ghost' className='rounded-full font-bold hover:bg-transparent hover:scale-105'>
           <DownloadIcon /> Install App
         </Button>
         <Bell size={18} className='hover:cursor-pointer hover:scale-105 mr-3' />

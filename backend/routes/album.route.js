@@ -4,7 +4,7 @@ import { protectRoute } from '../middleware/auth.middleware.js'
 
 const albumRouter = Router()
 
-albumRouter.use(protectRoute)
+// albumRouter.use(protectRoute)
 
 albumRouter.get('/', getAllAlbums)
 albumRouter.get('/:id', getAlbum)
