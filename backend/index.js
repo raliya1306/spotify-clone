@@ -1,10 +1,12 @@
 import express from 'express'
-import { PORT } from './utils/config.js'
+import { NODE_ENV, PORT } from './utils/config.js'
 import connectToMongoDb from './utils/db.js'
 import { clerkMiddleware } from '@clerk/express'
 import fileUpload from 'express-fileupload'
 import path from 'path'
 import cors from 'cors'
+import cron from 'node-cron'
+import fs from 'fs'
 
 import authRouter from './routes/auth.route.js'
 import adminRouter from './routes/admin.route.js'
@@ -34,11 +36,30 @@ app.use(fileUpload({
 	}
 }))
 
+const tempDir = path.join(process.cwd(), 'tmp')
+cron.schedule('0 * * * *', () => {
+	if (fs.existsSync(tempDir)) {
+		fs.readdir(tempDir, (err, files) => {
+			if (err) {
+				console.log('error', err)
+				return
+			}
+			for (const file of files) {
+				fs.unlink(path.join(tempDir, file), (err) => { })
+			}
+		})
+	}
+})
+
 app.use('/api/auth', authRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/songs', songRouter)
 app.use('/api/albums', albumRouter)
 app.use('/api/stats', statsRouter)
+
+if (NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, '../frontend/dist')))
+}
 
 app.use(errorHandler)
 
