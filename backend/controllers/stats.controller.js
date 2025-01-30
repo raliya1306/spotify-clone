@@ -18,7 +18,7 @@ export const getStats = async (req, res, next) => {
       },
       {
         $group: {
-          _id: 'artist'
+          _id: '$artist'
         }
       },
       {
@@ -26,11 +26,12 @@ export const getStats = async (req, res, next) => {
       }
     ])
   ]) 
+  
   res.status(200).json({
     totalSongs,
     totalAlbums,
     totalUsers,
-    totalArtists: artistsArray.length
+    totalArtists: artistsArray[0]?.count || 0
   })
   } catch (error) {
     next(error)

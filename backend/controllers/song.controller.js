@@ -25,7 +25,7 @@ export const getMadeForYou = async (req, res, next) => {
         }
       }
     ])
-
+ 
     res.status(200).json(songs)
   } catch (error) {
     next(error)

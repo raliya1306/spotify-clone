@@ -20,14 +20,12 @@ const HomePage = () => {
       const songs = [...recommendedSongs, ...madeForYou, ...todayInMusic]
       initializeQueue(songs)
     }
-  }, [])
-
+  }, [initializeQueue])
 
   return (
-    <div className='bg-zinc-900 rounded-lg'>
+    <div className='bg-zinc-900/80 rounded-lg'>
       <ScrollArea className='h-[calc(100vh-160px)]'>
-        <div className='p-3 pt-5'>
-          <h1 className='font-bold text-xl mb-4'>Good afternoon</h1>
+        <div className='p-3 pt-5'>          
           <RecommendedSection />
         </div>
         <div>

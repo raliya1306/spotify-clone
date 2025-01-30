@@ -53,9 +53,9 @@ const AudioControls = () => {
   }
 
   return (
-    <footer className='h-20 sm:h-24 bg-zinc-900 border-zinc-800 px-4'>
-      <div className='flex justify-between items-center h-full max-w-[1800px] mx-auto'>
-        <div className='hidden sm:flex items-center mb-3 gap-4 min-w-[180px] w-[30%]'>
+    <footer className='h-20 sm:h-24 bg-black border-zinc-800 px-4'>
+      <div className='flex items-center h-full max-w-[1800px] mx-auto'>
+        <div className='hidden sm:flex items-center mb-3 gap-4 min-w-[180px] w-[30%] sm:mr-10'>
           {currentSong &&
             (
               <>
@@ -63,10 +63,10 @@ const AudioControls = () => {
                   alt={currentSong.title}
                   className='object-cover w-14 h-14 rounded-md' />
                 <div className='flex-1 min-w-0'>
-                  <div className='font-medium truncate hover:underline cursor-pointer'>
+                  <div className='font-medium truncate'>
                     {currentSong.title}
                   </div>
-                  <div className='text-sm text-zinc-400 truncate hover:underline cursor-pointer'>
+                  <div className='text-sm text-zinc-400 truncate'>
                     {currentSong.artist}
                   </div>
                 </div>
@@ -105,7 +105,7 @@ const AudioControls = () => {
             <div className='text-xs text-zinc-400'>{formatTime(duration)}</div>
           </div>
         </div>
-        <div className='hidden sm:flex items-center gap-4 min-w-[180px] w-[30%] justify-end'>
+        <div className='hidden md:flex items-center gap-1 min-w-[180px] w-[30%] justify-end mb-2'>
           <Button size='icon' variant='ghost' className='text-zinc-400 hover:text-white hover:bg-transparent hover:scale-105'>
             <MicVocal />
           </Button><Button size='icon' variant='ghost' className='text-zinc-400 hover:text-white hover:bg-transparent hover:scale-105'>

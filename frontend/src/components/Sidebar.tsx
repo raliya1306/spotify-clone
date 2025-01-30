@@ -13,7 +13,7 @@ const Sidebar = () => {
   }, [getAlbums])
 
   return (
-    <div className='rounded-lg bg-zinc-900 p-5 px-2 h-full md:p-5'>
+    <div className='rounded-lg bg-zinc-900/80 p-5 px-2 h-full md:p-5'>
       <div className='flex items-center justify-between mb-4'>
         <div className='flex items-center text-gray-400 font-bold px-3 gap-2 md:px-3'>
           <Library className='size-7'/>

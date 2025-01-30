@@ -11,25 +11,25 @@ const TopBar = () => {
   return (
     <div className='flex items-center justify-between py-2 px-4 sticky top-0 bg-black z-20 h-16'>
       <Link to={'/'}>
-        <img src='spotify-white.jpg' className='ml-2 w-[30px] h-[30px] flex-shrink-0' alt='spotify logo' />
+        <img src='spotify-white.jpg' className='w-[30px] h-[30px]' alt='spotify logo' />
       </Link>
-      <div className='flex items-center gap-2'>
+      <div className='hidden sm:inline-flex items-center gap-2'>
         <Link to={'/'}>
-          <div className='bg-zinc-400/30 rounded-full hover:bg-zinc-400/40 p-3'>
+          <div className='bg-zinc-400/30 rounded-full hover:bg-zinc-400/40 p-3 w-12 h-12'>
             <Home size={26} />
           </div>
         </Link>
-        <div className='bg-zinc-400/30 flex gap-2 items-center rounded-full'>
+        <div className='bg-zinc-400/30 flex gap-2 items-center rounded-full '>
           <Search color='white' className='cursor-pointer ml-3' />
-          <input className='bg-transparent h-14 w-80 outline-none border-none' type='text' placeholder='What do you want to play?' name='search' />
+          <input className='bg-transparent h-14 w-60 outline-none border-none' type='text' placeholder='What do you want to play?' name='search' />
         </div>
       </div>
       <div className='flex gap-1 items-center'>
-        <Button className='bg-white hover:bg-gray-200 rounded-full font-bold hover:scale-105'>Explore Premium</Button>
-        <Button variant='ghost' className='rounded-full font-bold hover:bg-transparent hover:scale-105'>
+        <Button className='bg-white hover:bg-gray-200 rounded-full font-bold hover:scale-105 hidden md:inline-flex'>Explore Premium</Button>
+        <Button variant='ghost' className='rounded-full font-bold hover:bg-transparent hover:scale-105 hidden md:inline-flex'>
           <DownloadIcon /> Install App
         </Button>
-        <Bell size={18} className='hover:cursor-pointer hover:scale-105 mr-3' />
+        <Bell size={18} className='hover:cursor-pointer hover:scale-105 mr-3 hidden md:inline-flex' />
         {isAdmin && (
           <Link to='/admin'>
             <Button variant='ghost' className='hover:scale-105 hover:bg-transparent'>

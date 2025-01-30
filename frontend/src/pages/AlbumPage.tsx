@@ -53,7 +53,7 @@ const AlbumPage = () => {
       <ScrollArea className='h-[calc(100vh-160px)] rounded-lg'>
         <ScrollBar className='z-20' />
         <div className='relative min-h-full'>
-          <div className='absolute bg-gradient-to-b from-pink-300/90 to-zinc-800 inset-0 pointer-events-none rounded-lg' />
+          <div className='absolute bg-gradient-to-b from-zinc-800/100 to-zinc-800 inset-0 pointer-events-none rounded-lg' />
           <div className='relative z-10'>
             <div className='flex p-6 pb-8 gap-6'>
               <img src={currentAlbum?.imageUrl} alt={currentAlbum?.title} className='w-[210px] h-[210px] rounded shadow-xl' />
