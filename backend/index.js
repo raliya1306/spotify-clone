@@ -1,5 +1,5 @@
 import express from 'express'
-import { NODE_ENV, PORT } from './utils/config.js'
+import { FRONTEND_URI, NODE_ENV, PORT } from './utils/config.js'
 import connectToMongoDb from './utils/db.js'
 import { clerkMiddleware } from '@clerk/express'
 import fileUpload from 'express-fileupload'
@@ -20,7 +20,7 @@ const app = express()
 
 app.use(cors(
 	{
-		origin: 'http://127.0.0.1:5173',
+		origin: FRONTEND_URI,
 		credentials: true
 	}
 ))
