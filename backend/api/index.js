@@ -1,6 +1,6 @@
 import express from 'express'
-import { FRONTEND_URI, NODE_ENV, PORT } from './utils/config.js'
-import connectToMongoDb from './utils/db.js'
+import { FRONTEND_URI, NODE_ENV, PORT } from '../utils/config.js'
+import connectToMongoDb from '../utils/db.js'
 import { clerkMiddleware } from '@clerk/express'
 import fileUpload from 'express-fileupload'
 import path from 'path'
@@ -8,12 +8,12 @@ import cors from 'cors'
 import cron from 'node-cron'
 import fs from 'fs'
 
-import authRouter from './routes/auth.route.js'
-import adminRouter from './routes/admin.route.js'
-import songRouter from './routes/song.route.js'
-import albumRouter from './routes/album.route.js'
-import statsRouter from './routes/stats.route.js'
-import errorHandler from './middleware/errorHandler.middleware.js'
+import authRouter from '../routes/auth.route.js'
+import adminRouter from '../routes/admin.route.js'
+import songRouter from '../routes/song.route.js'
+import albumRouter from '../routes/album.route.js'
+import statsRouter from '../routes/stats.route.js'
+import errorHandler from '../middleware/errorHandler.middleware.js'
 
 const __dirname = path.resolve()
 const app = express()
